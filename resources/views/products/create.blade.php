@@ -5,7 +5,6 @@
 @section('contents')
     <h1 class="mb-0">Add Products</h1>
     <hr>
-
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row mb-3">

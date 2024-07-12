@@ -12,14 +12,21 @@
     </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Chart</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/profile">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Profile</span></a>
+            <span>Profile</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('logout') }}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Logout</span>
+        </a>
     </li>
     <div class="text-center d-none d-md-inline pt-5">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
