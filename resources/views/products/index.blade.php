@@ -1,11 +1,7 @@
 @extends('layouts.app')
 
 @section('contents')
-    @if (Session::has('success'))
-        <div class="alert alert-success mt-4" role="start">
-            {{ Session::get('success') }}
-        </div>
-    @endif
+    @include('layouts.alert')
     <table class="table mt-4">
         <thead>
             <tr>
@@ -25,25 +21,31 @@
                         <td class="text-center">{{ $rs->title }}</td>
                         <td class="text-center">{{ $rs->price }}</td>
                         <td class="text-center">{{ $rs->product_code }}</td>
-                        <td class="text-center">{{ $rs->description }}</td>
-                        <td class="text-center">
-                            <a href="{{ route('products.show', $rs->id) }}" class="btn mr-1">
-                                <i class="fas fa-fw fa-eye"></i>
+                        <td class="text-center" style="white-space: nowrap; overflow-x: scroll;"">
+                            {{ $rs->description }}
+                        </td>                        
+                        <td class="d-flex justify-content-center">
+                            <a href="{{ route('products.show', $rs->id) }}" class="mx-3">
+                                <i class="bi-eye-fill text-primary"></i>
                             </a>
-                            <a href="{{ route('products.edit', $rs->id) }}" class="btn mr-1">
-                                <i class="fas fa-fw fa-pencil-alt"></i>
+                            <a href="{{ route('products.edit', $rs->id) }}" class="mx-3">
+                                <i class="bi-pencil-square text-dark"></i>
                             </a>
-                            <form action="{{ route('products.destroy', $rs->id) }}" method="POST" class="btn">
+                            <a href="#" class="mx-3"
+                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $rs->id }}').submit();">
+                                <i class="bi-trash3-fill text-danger"></i>
+                            </a>
+                            <form id="delete-form-{{ $rs->id }}" action="{{ route('products.destroy', $rs->id) }}"
+                                method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <i class="fas fa-fw fa-recycle"></i>
                             </form>
-                        </td>
+                        </td>   
                     </tr>
                 @endforeach
             @else
                 <tr>
-                    <td class="text-center" colspan="5">Products not found</td>
+                    <td colspan="10">Products not found</td>
                 </tr>
             @endif
         </tbody>
