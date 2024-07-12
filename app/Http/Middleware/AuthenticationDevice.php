@@ -18,8 +18,8 @@ class AuthenticationDevice
     {
         $agent = new Agent();
 
-        $isMobile = $agent->isAndroidOS(NULL) || $agent->isiOS(NULL);
-        $isTablet = $agent->isTablet(NULL);
+        $isMobile = $agent->isAndroidOS() || $agent->isiOS();
+        $isTablet = $agent->isTablet();
         $isDesktop = $agent->isDesktop();
 
         if (!($isDesktop) || $isMobile || $isTablet) {
