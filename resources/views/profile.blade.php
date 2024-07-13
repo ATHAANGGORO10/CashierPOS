@@ -1,39 +1,67 @@
 @extends('layouts.app')
 
-@section('title', 'Profile')
+@section('title', 'profile settings')
 
 @section('contents')
-    <h1 class="mb-0">Profile</h1>
-    <hr>
-
-    <form action="" method="POST" enctype="multipart/form-data" id="profile_setup_frm">
+    @if (Session::has('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    toast: 'true',
+                    position: 'bottom-end',
+                    icon: 'success',
+                    text: '{{ Session::get('success') }}',
+                    showConfirmButton: false,
+                    timer: 5500,
+                    customClass: {
+                        content: 'swal-text-left'
+                    },
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInRight'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutRight'
+                    }
+                });
+            });
+        </script>
+    @endif
+    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" id="profile_setup_frm">
+        @csrf
         <div class="row">
             <div class="col-md-12 boredr-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Your Name : <small>{{ auth()->user()->name }}</small></h4>
+                        <input type="text" name="name" class="form-control form-control-lg border border-dark"
+                            placeholder="first name" value="{{ auth()->user()->name }}" required>
                     </div>
-                    <div class="row" id="res"></div>
-                    <div class="row mt-2">
-                        <div class="col-md-6">
-                            <label class="labels">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="first name" value="{{ auth()->user()->name }}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="labels">Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Email" value="{{ auth()->user()->email }}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="labels">Phone</label>
-                            <input type="text" name="phone" class="form-control" placeholder="Phone Number" value="{{ auth()->user()->phone }}">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="labels">Address</label>
-                            <input type="text" name="address" class="form-control" placeholder="Address" value="{{ auth()->user()->address }}">
-                        </div>
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Your Email : <small>{{ auth()->user()->email }}</small></h4>
+                        <input type="email" name="email" class="form-control form-control-lg border border-dark"
+                            placeholder="Email" value="{{ auth()->user()->email }}" required>
                     </div>
-                    <div class="mt-5 text-center">
-                        <button id="btn" class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                    <div class="col-md-6 pt-4">
+                        <h4 class="mb-3">Your Phone : <small>{{ auth()->user()->phone }}</small></h4>
+                        <input type="number" name="phone" class="form-control form-control-lg border border-dark"
+                            placeholder="Phone Number" value="{{ auth()->user()->phone }}" required>
+                    </div>
+                    <div class="col-md-6 pt-4 mb-4">
+                        <h4 class="mb-3">Your Address : <small>{{ auth()->user()->address }}</small></h4>
+                        <input type="text" name="address" class="form-control form-control-lg border border-dark"
+                            placeholder="Address" value="{{ auth()->user()->address }}" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button id="btn" type="submit" class="btn btn-primary px-4 py-2 align-item-center">
+                            <i class="bi-save mr-1"></i>
+                            Save Profile
+                        </button>
+                        <a href="{{ route('logout') }}" class="btn btn-primary px-4 py-2 align-item-center">
+                            <i class="bi-emoji-dizzy-fill mr-1"></i>
+                            Outs Profile
+                        </a>
                     </div>
                 </div>
             </div>

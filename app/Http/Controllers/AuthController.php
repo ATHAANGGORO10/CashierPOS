@@ -55,7 +55,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard.index');
     }
 
     public function logout(Request $request)
@@ -67,7 +67,35 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function profile() {
+    public function profile()
+    {
         return view('profile');
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $user = User::find(auth()->id());
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . auth()->id(),
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+        ]);
+
+        return redirect()->route('profile')->with('success', 'Profile updated successfully.');
     }
 }

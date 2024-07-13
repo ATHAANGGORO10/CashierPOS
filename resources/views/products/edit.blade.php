@@ -1,32 +1,43 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Product')
+@section('title', 'edit product')
 
 @section('contents')
-    <h1 class="mb-0">Edit Product</h1>
-    <hr>
-    <form action="{{ route('products.update', $product->id) }}" method="POST">
+    <form class="pt-4" action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">
             <div class="col mb-3">
-                <input type="text" name="title" class="form-control" placeholder="Title"  value="{{ $product->title }}">
+                <h4 class="mb-3">Title Product :</h4>
+                <input type="text" name="title" class="form-control form-control-lg border border-dark" placeholder="Title" value="{{ $product->title }}" required>
             </div>
             <div class="col mb-3">
-                <input type="text" name="price" class="form-control" placeholder="Price" value="{{ $product->price }}">
+                <h4 class="mb-3">Price Product :</h4>
+                <input type="text" name="price" class="form-control form-control-lg border border-dark" placeholder="Price" value="{{ $product->price }}" required>
+            </div>
+            <div class="col mb-3">
+                <h4 class="mb-3">Product Code :</h4>
+                <input type="text" name="product_code" class="form-control form-control-lg border border-dark" placeholder="Products Code" value="{{ $product->product_code }}" required>
             </div>
         </div>
-        <div class="row">
-            <div class="col mb-3">
-                <input type="text" name="product_code" class="form-control" placeholder="Products Code" value="{{ $product->product_code }}">
-            </div>
-            <div class="col mb-3">
-                <textarea name="description" class="form-control" placeholder="Description">{{ $product->description }}</textarea>
+
+        <div class="row mt-4">
+            <div class="col mb-4">
+                <h4 class="mb-3">Description :</h4>
+                <textarea name="description" class="form-control form-control-lg border border-dark outline-none" placeholder="Description" required rows="5" required style="resize: none">{{ $product->description }}</textarea>
             </div>
         </div>
+
         <div class="row">
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="col">
+                <button type="submit" class="btn btn-primary px-4 py-2 mr-2">
+                    <i class="bi-pencil-square mr-1"></i>
+                    Add Edit
+                </button>
+                <button type="reset" class="btn btn-primary px-4 py-2 mr-2">
+                    <i class="bi-archive-fill mr-1"></i>
+                    Reset Edit
+                </button>
             </div>
         </div>
     </form>
