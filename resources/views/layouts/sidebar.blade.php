@@ -2,13 +2,25 @@
     <li class="nav-item">
         <a class="nav-link" href="/dashboard">
             <i class="bi-database-fill-dash"></i>
-            <span class="mt-2">Admin Panel</span>
+            <span class="mt-2">Dashboar Panel</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('products') }}">
             <i class="bi-grid-fill"></i>
             <span class="mt-2 f-bold">Data Product</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="bi-box-seam-fill"></i>
+            <span class="mt-2 f-bold">Stock Product</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="bi-person-check-fill"></i>
+            <span class="mt-2 f-bold">Costumer Lists</span>
         </a>
     </li>
     <li class="nav-item">

@@ -6,33 +6,33 @@
     <form class="pt-4">
         <div class="row">
             <div class="col mb-3">
-                <h4 class="mb-3">Title Product : </h4>
-                <input type="text" name="title" class="form-control form-control-lg border border-dark" value="{{ $product->title }}" readonly>
+                <h5 class="mb-3">Title Product : </h5>
+                <input type="text" name="title" class="form-control form-control-lg border border-dark" value="{{ $product->title }}" readonly disabled>
             </div>
             <div class="col">
-                <h4 class="mb-3">Price Product : </h4>
-                <input type="text" name="price" class="form-control form-control-lg border border-dark" value="{{ $product->price }}" readonly>
+                <h5 class="mb-3">Price Product : </h5>
+                <input type="text" name="price" class="form-control form-control-lg border border-dark" value="{{ $product->price }}" readonly disabled>
             </div>
             <div class="col">
-                <h4 class="mb-3">Product Code : </h4>
-                <input type="text" name="product_code" class="form-control form-control-lg border border-dark" value="{{ $product->product_code }}" readonly>
+                <h5 class="mb-3">Product Code : </h4>
+                <input type="text" name="product_code" class="form-control form-control-lg border border-dark" value="{{ $product->product_code }}" readonly disabled>
             </div>
         </div>
 
         <div class="row mt-4">
             <div class="col mb-3">
-                <h4 class="mb-3">Description : </h4>
-                <textarea name="description" class="form-control form-control-lg border border-dark" required rows="5" readonly style="resize: none">{{ $product->description }}</textarea>
+                <h5 class="mb-3">Description : </h4>
+                <textarea name="description" class="form-control form-control-lg border border-dark" required rows="5" readonly disabled style="resize: none">{{ $product->description }}</textarea>
             </div>
         </div>
 
         <div class="row mt-4">
             <div class="col mb-3">
-                <h4 class="mb-3">Time Created : </h4>
+                <h5 class="mb-3">Time Created : </h5>
                 <input type="text" name="create_at" class="form-control form-control-lg border border-dark" value="{{ $product->created_at }}" readonly>
             </div>
             <div class="col mb-4">
-                <h4 class="mb-3">Time Updated : </h4>
+                <h5 class="mb-3">Time Updated : </h5>
                 <input type="text" name="updated_at" class="form-control form-control-lg border border-dark" value="{{ $product->updated_at }}" readonly>
             </div>
         </div>

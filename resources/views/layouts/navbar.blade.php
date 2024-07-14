@@ -5,11 +5,10 @@
         </h3>
     </div>
     <div class="d-flex align-items-center ml-auto">
-        <img class="rounded-circle border border-primary" src="{{ asset('admin-asset/img/undraw_profile.svg') }}"
-            width="47">
-        <div class="d-none d-lg-inline ml-2 text-left">
+        <div class="d-none d-lg-inline mr-3 text-right">
             <div class="medium">{{ auth()->user()->name }}</div>
             <span class="small">{{ auth()->user()->email }}</span>
         </div>
+        <img class="rounded-circle border border-primary" src="{{ asset('admin-asset/img/undraw_profile.svg') }}"width="47">
     </div>
 </div>

@@ -8,23 +8,27 @@
         @method('PUT')
         <div class="row">
             <div class="col mb-3">
-                <h4 class="mb-3">Title Product :</h4>
-                <input type="text" name="title" class="form-control form-control-lg border border-dark" placeholder="Title" value="{{ $product->title }}" required>
+                <h5 class="mb-3">Title Product :</h5>
+                <input type="text" name="title" class="form-control form-control-lg border border-dark" placeholder="Title"
+                    value="{{ $product->title }}" required>
             </div>
             <div class="col mb-3">
-                <h4 class="mb-3">Price Product :</h4>
-                <input type="text" name="price" class="form-control form-control-lg border border-dark" placeholder="Price" value="{{ $product->price }}" required>
+                <h5 class="mb-3">Price Product :</h5>
+                <input type="tel" name="price" class="form-control form-control-lg border border-dark" id="price"
+                    placeholder="Price" value="{{ $product->price }}" required>
             </div>
             <div class="col mb-3">
-                <h4 class="mb-3">Product Code :</h4>
-                <input type="text" name="product_code" class="form-control form-control-lg border border-dark" placeholder="Products Code" value="{{ $product->product_code }}" required>
+                <h5 class="mb-3">Product Code :</h5>
+                <input type="text" name="product_code" class="form-control form-control-lg border border-dark"
+                    placeholder="Products Code" value="{{ $product->product_code }}" required>
             </div>
         </div>
 
         <div class="row mt-4">
             <div class="col mb-4">
-                <h4 class="mb-3">Description :</h4>
-                <textarea name="description" class="form-control form-control-lg border border-dark outline-none" placeholder="Description" required rows="5" required style="resize: none">{{ $product->description }}</textarea>
+                <h5 class="mb-3">Description :</h5>
+                <textarea name="description" class="form-control form-control-lg border border-dark outline-none"
+                    placeholder="Description" required rows="5" style="resize: none">{{ $product->description }}</textarea>
             </div>
         </div>
 
