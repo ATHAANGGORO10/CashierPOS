@@ -14,7 +14,7 @@
             </div>
             <div class="col mb-3">
                 <h5 class="mb-3">Price Product :</h5>
-                <input type="tel" name="price" class="form-control form-control-lg border border-dark" id="price"
+                <input type="number" name="price" class="form-control form-control-lg border border-dark" id="price"
                     placeholder="Price" value="{{ $product->price }}" required>
             </div>
             <div class="col mb-3">

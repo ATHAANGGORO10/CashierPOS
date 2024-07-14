@@ -12,7 +12,7 @@
             </div>
             <div class="col mb-3">
                 <h4 class="mb-3">Price Product</h4>
-                <input type="text" name="price" class="form-control form-control-lg border border-dark" placeholder="Price">
+                <input type="number" name="price" class="form-control form-control-lg border border-dark" placeholder="Price">
             </div>
             <div class="col mb-3">
                 <h4 class="mb-3">Product Code</h4>

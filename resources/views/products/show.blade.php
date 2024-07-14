@@ -11,7 +11,7 @@
             </div>
             <div class="col">
                 <h5 class="mb-3">Price Product : </h5>
-                <input type="text" name="price" class="form-control form-control-lg border border-dark" value="{{ $product->price }}" readonly disabled>
+                <input type="number" name="price" class="form-control form-control-lg border border-dark" value="{{ $product->price }}" readonly disabled>
             </div>
             <div class="col">
                 <h5 class="mb-3">Product Code : </h4>

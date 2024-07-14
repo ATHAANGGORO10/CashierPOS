@@ -20,6 +20,14 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+Route::get('costumer', function () {
+    return view('costumer');
+})->name('costumer');
+
+Route::get('stock', function () {
+    return view('stock');
+})->name('stock');
+
 Route::controller(AuthController::class)->group(function () {
     Route::get('register', 'register')->name('register');
     Route::post('register', 'registerSave')->name('register.save');
