@@ -23,6 +23,13 @@ class ProductController extends Controller
     {
         Product::create($request->all());
 
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0|max:999999.999',
+            'product_code' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
         return redirect()->route('products')->with('success', 'Product added successfully');
     }
 

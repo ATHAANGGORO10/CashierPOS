@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('contents')
-    <div class="row pt-5">
+    <div class="row mt-4">
         <div class="col-md-6 mb-4">
-            <div class="card border-left-primary shadow-sm h-100 py-2 bg-light">
+            <div class="card border-left-primary shadow-sm h-100 py-2 bg-white">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-md-6 mb-4">
-            <div class="card border-left-success shadow-sm h-100 py-2 bg-light">
+            <div class="card border-left-success shadow-sm h-100 py-2 bg-white">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="col-md-6 mb-4">
-            <div class="card border-left-warning shadow-sm h-100 py-2 bg-light">
+            <div class="card border-left-warning shadow-sm h-100 py-2 bg-white">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">

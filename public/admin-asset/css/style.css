@@ -40,6 +40,16 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
+.table-responsive::-webkit-scrollbar {
+    display: none;
+}
+
+.table-responsive {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+    overflow-y: auto;          
+}
+
 *,
 ::after,
 ::before {
@@ -50,6 +60,7 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
+    background-color: #ffffff;
     -webkit-tap-highlight-color: transparent
 }
 
@@ -74,7 +85,6 @@ body {
     line-height: 1.5;
     color: #858796;
     text-align: left;
-    background-color: #fff
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {

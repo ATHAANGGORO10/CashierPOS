@@ -3,7 +3,7 @@
 @section('title', 'edit product')
 
 @section('contents')
-    <form class="pt-4" action="{{ route('products.update', $product->id) }}" method="POST">
+    <form class="mt-4" action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">
@@ -14,7 +14,7 @@
             </div>
             <div class="col mb-3">
                 <h5 class="mb-3">Price Product :</h5>
-                <input type="number" name="price" class="form-control form-control-lg border border-dark" id="price"
+                <input type="number" name="price" class="form-control form-control-lg border border-dark"
                     placeholder="Price" value="{{ $product->price }}" required>
             </div>
             <div class="col mb-3">
@@ -38,7 +38,7 @@
                     <i class="bi-pencil-square mr-1"></i>
                     Add Edit
                 </button>
-                <button type="reset" class="btn btn-primary px-4 py-2 mr-2">
+                <button type="reset" class="btn btn-primary px-4 py-2">
                     <i class="bi-archive-fill mr-1"></i>
                     Reset Edit
                 </button>
