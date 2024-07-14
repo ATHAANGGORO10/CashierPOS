@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {
@@ -14,6 +15,7 @@ class DashboardController extends Controller
         $userCount = User::count();
 
         $totalPrice = Product::sum('price');
+        Log::info('Total Price Calculated: ' . $totalPrice);
 
         return view('dashboard', compact(
             'productCount',
