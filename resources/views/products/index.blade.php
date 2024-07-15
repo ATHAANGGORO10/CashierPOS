@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'data product')
+@section('title', 'Table data product')
 
 @section('contents')
     @if (Session::has('success'))
@@ -46,7 +46,7 @@
                                 <tr>
                                     <td class="text-center">{{ $loop->iteration }}</td>
                                     <td class="text-center">{{ $rs->title }}</td>
-                                    <td class="text-center">{{ $rs->price }}</td>
+                                    <td class="text-center">Rp {{ number_format($rs->price) }}</td>
                                     <td class="text-center">{{ $rs->product_code }}</td>
                                     <td class="text-center">
                                         {{ $rs->description }}

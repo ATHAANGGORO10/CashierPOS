@@ -53,7 +53,30 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-2">Total New Price product
                             </div>
                             <div class="h5 mb-2 font-weight-bold text-gray-800">
-                                IDR {{ number_format($totalPrice, 3, ',', '.') }}
+                                IDR {{ number_format($totalPrice, 0, ',', '.') }}
+                            </div>
+                            <p class="col pl-0">
+                                The total price functions as information regarding the amount obtained from the product
+                                order price and as information regarding product income
+                            </p>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card border-left-danger shadow-sm h-100 py-2 bg-white">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-2">Total New Price
+                                product
+                            </div>
+                            <div class="h5 mb-2 font-weight-bold text-gray-800">
+                                150
                             </div>
                             <p class="col pl-0">
                                 The total price functions as information regarding the amount obtained from the product

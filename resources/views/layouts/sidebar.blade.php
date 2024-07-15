@@ -18,9 +18,9 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('costumer') }}">
+        <a class="nav-link" href="{{ route('customer') }}">
             <i class="bi-person-check-fill"></i>
-            <span class="mt-2 f-bold">Costumer Lists</span>
+            <span class="mt-2 f-bold">Customer Lists</span>
         </a>
     </li>
     <li class="nav-item">
