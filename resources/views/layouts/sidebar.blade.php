@@ -12,13 +12,13 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('stock') }}">
+        <a class="nav-link" href="#">
             <i class="bi-box-seam-fill"></i>
             <span class="mt-2 f-bold">Stock Product</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('customer') }}">
+        <a class="nav-link" href="#">
             <i class="bi-person-check-fill"></i>
             <span class="mt-2 f-bold">Customer Lists</span>
         </a>
