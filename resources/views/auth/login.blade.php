@@ -11,13 +11,13 @@
                     <form class="user" action="{{ route('login.action') }}" method="POST">
                         @csrf
                         @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul class="mb-0">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                         @endif
                         <div class="form-group">
                             <input name="email" type="email"
@@ -37,8 +37,7 @@
                             <div class="custom-control custom-checkbox small">
                                 <input name="remember" type="checkbox" class="custom-control-input border border-dark"
                                     id="customCheck">
-                                <label class="custom-control-label" for="customCheck">Remember
-                                    Me</label>
+                                <label class="custom-control-label" for="customCheck">Remember Me</label>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>

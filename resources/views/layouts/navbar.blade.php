@@ -9,6 +9,12 @@
             <div class="medium">{{ auth()->user()->name }}</div>
             <span class="small">{{ auth()->user()->email }}</span>
         </div>
-        <img class="rounded-circle border border-primary" src="{{ asset('admin-asset/img/undraw_profile.svg') }}"width="47">
+        @if (auth()->user()->photo)
+            <img id="profilePhoto" class="rounded-circle border border-3 border-dark shadow-sm"
+                src="{{ asset(auth()->user()->photo) }}" width="47" height="47">
+        @else 
+            <img id="profilePhoto" class="rounded-circle border border-3 border-dark shadow-sm" 
+                src="{{ asset('admin-asset/img/undraw_profile.svg') }}" width="47" height="47">
+        @endif
     </div>
 </div>

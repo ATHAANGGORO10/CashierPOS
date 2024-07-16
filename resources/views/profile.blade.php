@@ -5,7 +5,7 @@
 @section('contents')
     @if (Session::has('success'))
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContensLoaded', function() {
                 Swal.fire({
                     toast: 'true',
                     position: 'bottom-end',
@@ -65,6 +65,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        @csrf
+        <div class="form-group mt-4">
+            <label for="photo">Change Profile Photo:</label>
+            <input type="file" class="form-control-file" id="photo" name="photo">
         </div>
     </form>
 @endsection

@@ -18,9 +18,6 @@
                                 This aims to facilitate the distribution of information
                             </p>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -37,9 +34,6 @@
                                 also
                                 provides information that the control panel is being used
                             </p>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -60,9 +54,6 @@
                                 order price and as information regarding product income
                             </p>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -82,9 +73,6 @@
                                 The total price functions as information regarding the amount obtained from the product
                                 order price and as information regarding product income
                             </p>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

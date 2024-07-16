@@ -45,9 +45,9 @@
 }
 
 .table-responsive {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;     
-    overflow-y: auto;          
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
 }
 
 *,
@@ -12617,10 +12617,6 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
     width: 100%
-}
-
-.swal-text-left {
-    text-align: left;
 }
 
 div.scrollmenu {

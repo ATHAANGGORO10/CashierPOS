@@ -13,9 +13,6 @@
                     text: '{{ Session::get('success') }}',
                     showConfirmButton: false,
                     timer: 5500,
-                    customClass: {
-                        content: 'swal-text-left'
-                    },
                     showClass: {
                         popup: 'animate__animated animate__fadeInRight'
                     },
@@ -28,9 +25,9 @@
     @endif
     <div class="card mt-4 shadow-sm">
         <div class="card-body">
-            <div class="table-responsive" style="max-height: 455px; overflow-y: ; overflow">
+            <div class="table-responsive" style="max-height: 420px; max-width: 200rem;">
                 <table class="table table-bordered">
-                    <thead>
+                    <thead class="bg-light">
                         <tr>
                             <th class="text-center">#</th>
                             <th class="text-center">Title Product</th>
@@ -63,8 +60,8 @@
                                             <i class="bi-trash3-fill text-danger"></i>
                                         </a>
                                     </td>
-                                    <form id="delete-form-{{ $rs->id }}" action="{{ route('products.destroy', $rs->id) }}"
-                                        method="POST">
+                                    <form id="delete-form-{{ $rs->id }}"
+                                        action="{{ route('products.destroy', $rs->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                     </form>
@@ -72,18 +69,18 @@
                             @endforeach
                         @else
                             <tr>
-                                <td colspan="10">Products not found</td>
+                                <td class="text-uppercase text-primary" colspan="10">data product not found</td>
                             </tr>
                         @endif
                     </tbody>
                 </table>
             </div>
+            <div class="d-flex align-items-center bg-white pt-2">
+                <a href="{{ route('products.create') }}" class="btn btn-primary py-2 px-4">
+                    <i class="bi-plus-circle mr-1"></i>
+                    Create Products
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="d-flex align-items-center mt-4">
-        <a href="{{ route('products.create') }}" class="btn btn-primary py-2 px-3">
-            <i class="bi-plus-circle mr-1"></i>
-            Create Products
-        </a>
     </div>
 @endsection

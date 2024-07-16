@@ -29,7 +29,7 @@ class AuthController extends Controller
             'name'      => $request->name,
             'email'     => $request->email,
             'password'  => Hash::make($request->password),
-            'level'     => 'Admin'
+            // 'level'     => 'Admin'
         ]);
 
         return redirect()->route('login');
@@ -81,6 +81,7 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users,email,' . auth()->id(),
             'phone' => 'required',
             'address' => 'required',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -96,6 +97,16 @@ class AuthController extends Controller
             'address' => $request->address,
         ]);
 
-        return redirect()->route('profile')->with('success', 'Profile updated successfully.');
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $path = 'storage/photos/';
+            $photo->move($path, $filename);
+
+            $user->photo = $path . $filename;
+            $user->save();
+        }
+
+        return redirect()->route('profile')->with('success', 'Profile updated successfully');
     }
 }
