@@ -99,14 +99,12 @@ class AuthController extends Controller
 
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
-            $path = 'storage/photos/';
-            $photo->move($path, $filename);
-
-            $user->photo = $path . $filename;
+            $photoData = base64_encode(file_get_contents($photo->getRealPath()));
+    
+            $user->photo = $photoData;  
             $user->save();
         }
 
         return redirect()->route('profile')->with('success', 'Profile updated successfully');
-    }
+    }   
 }

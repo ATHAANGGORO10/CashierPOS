@@ -6,5 +6,6 @@
     <link href="{{ url('https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin-asset/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-asset/css/index.css') }}" rel="stylesheet">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>

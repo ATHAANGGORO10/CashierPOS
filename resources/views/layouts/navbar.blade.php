@@ -11,7 +11,7 @@
         </div>
         @if (auth()->user()->photo)
             <img id="profilePhoto" class="rounded-circle border border-3 border-dark shadow-sm"
-                src="{{ asset(auth()->user()->photo) }}" width="47" height="47">
+                src="data:image/jpeg;base64,{{ auth()->user()->photo }}" width="47" height="47">
         @else 
             <img id="profilePhoto" class="rounded-circle border border-3 border-dark shadow-sm" 
                 src="{{ asset('admin-asset/img/undraw_profile.svg') }}" width="47" height="47">

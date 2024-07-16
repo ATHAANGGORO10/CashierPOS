@@ -21,3 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
         this.querySelector('i').classList.toggle('bi-eye-slash');
     });
 });
+
+function updateFileName(input) {
+    const fileName = input.files[0].name;
+    document.getElementById('file-name').textContent = 'Selected File: ' + fileName;
+};

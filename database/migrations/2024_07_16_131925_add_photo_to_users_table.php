@@ -9,17 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('photo')->nullable()->after('address'); // Menambah kolom 'photo' setelah 'address'
+            $table->text('photo')->nullable();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Batalkan migrasi.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('photo');
