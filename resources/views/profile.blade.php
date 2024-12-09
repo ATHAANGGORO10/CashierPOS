@@ -5,7 +5,7 @@
 @section('contents')
     @if (Session::has('success'))
         <script>
-            document.addEventListener('DOMContensLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     toast: 'true',
                     position: 'bottom-end',
@@ -28,47 +28,69 @@
     @endif
     <form class="pt-4" action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data"
         id="profile_setup_frm">
-        <div class="row">@csrf
-            <div class="col-md-12 boredr-right">
-                <div class="row mt-2 mb-4">
-                    <div class="col-md-6">
-                        <h5 class="mb-3">Your Name : <small>{{ auth()->user()->name }}</small></h3>
-                            <input type="text" name="name" class="form-control form-control-lg border border-dark"
-                                placeholder="first name" value="{{ auth()->user()->name }}" required>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="row">@csrf
+                    <div class="col-sm-3 d-flex align-items-center">
+                        <i class="bi-person-circle mr-3 text-primary"></i>
+                        <h6 class="mb-0">Username</h6>
                     </div>
-                    <div class="col-md-6">
-                        <h5 class="mb-3">Your Email : <small>{{ auth()->user()->email }}</small></h3>
-                            <input type="email" name="email" class="form-control form-control-lg border border-dark"
-                                placeholder="Email" value="{{ auth()->user()->email }}" required>
-                    </div>
-                    <div class="col-md-6 pt-4">
-                        <h5 class="mb-3">Your Phone : <small>{{ auth()->user()->phone }}</small></h5>
-                        <input type="number" name="phone" class="form-control form-control-lg border border-dark"
-                            placeholder="Phone Number" value="{{ auth()->user()->phone }}" required>
-                    </div>
-                    <div class="col-md-6 pt-4">
-                        <h5 class="mb-3">Your Address : <small>{{ auth()->user()->address }}</small></h4>
-                            <input type="text" name="address" class="form-control form-control-lg border border-dark"
-                                placeholder="Address" value="{{ auth()->user()->address }}" required>
-                    </div>
-                    <div class="col-md-6 pt-4 mb-4">
-                        <div class="mb-3">@csrf
-                            <h5 class="mb-3">Change Avatar : <small></small></h5>
-                            <input type="file" name="photo" class="form-control form-control-lg border border-dark"
-                                accept="image/*">
-                        </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input class="w-100" name="name" placeholder="Username" type="text"
+                            value="{{ auth()->user()->name }}" style="border: none; outline: none;" required>
                     </div>
                 </div>
+                <hr>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-3 d-flex align-items-center">
+                        <i class="bi-envelope-at-fill mr-3 text-danger"></i>
+                        <h6 class="mb-0">Email Account</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input class="w-100" name="email" placeholder="Gmail Account" type="email"
+                            value="{{ auth()->user()->email }}" style="border: none; outline: none;" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3 d-flex align-items-center">
+                        <i class="bi-telephone-plus mr-3 text-success"></i>
+                        <h6 class="mb-0">Number Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input class="w-100" name="phone" placeholder="Number Phone" type="number"
+                            value="{{ auth()->user()->phone }}" style="border: none; outline: none;" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3 d-flex align-items-center">
+                        <i class="bi-building-add mr-3 text-info"></i>
+                        <h6 class="mb-0">Your Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input class="w-100" name="address" placeholder="Your Address" type="text"
+                            value="{{ auth()->user()->address }}" style="border: none; outline: none;" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="row pt-2">@csrf
+                    <div class="col-sm-12">
                         <button id="btn" type="submit" class="btn btn-primary px-4 py-2 mr-2 align-item-center">
                             <i class="bi-save mr-1"></i>
                             Save Profile
                         </button>
-                        <a href="{{ route('logout') }}" class="btn btn-primary px-4 py-2 align-item-center">
+                        <a href="{{ route('logout') }}" class="btn btn-primary px-4 py-2 mr-2 align-item-center">
                             <i class="bi-emoji-dizzy-fill mr-1"></i>
                             Outs Profile
                         </a>
+                        <div class="file-upload btn btn-primary px-4 py-2 align-item-center">
+                            <label class="mb-0">
+                                <i class="bi-upload mr-1"></i>
+                                Upload Image
+                            </label>
+                            <input name="photo" type="file" accept="image/*">
+                        </div>
                     </div>
                 </div>
             </div>
